@@ -1,0 +1,17 @@
+spec_version: 2
+description: Run a simple shell grain
+
+inputs:
+  agent:
+    type: agent
+
+grains:
+  validate:
+    kind: shell
+    spec:
+      agent:
+        name: '{{ .inputs.agent }}'
+      activities:
+        deploy:
+          commands:
+            - 'echo "Hello World"'
